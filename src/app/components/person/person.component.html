@@ -20,7 +20,7 @@
             <th>Askerlik Durumu</th>
         </tr>
     </thead>
-    <tr *ngFor="let person of persons">
+    <tr *ngFor="let person of persons | filterPipe:filterText">
         <td>{{person.nameSurname}}</td>
         <td>{{person.gender}}</td>
         <td>{{person.age}}</td>
