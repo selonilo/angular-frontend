@@ -1,7 +1,8 @@
+import { PersonService } from './../../services/person.service';
 import { PersonResponseModel } from './../../models/personResponseModel';
 import { Person } from './../../models/person';
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-person',
@@ -11,24 +12,19 @@ import {HttpClient} from '@angular/common/http';
 export class PersonComponent implements OnInit {
 
   persons:Person[]=[];
-  apiUrl = "http://localhost:8080/public/person?page=0&size=20"
-  body:{} = {
-    
-  }
-
-    //personResponseModel:PersonResponseModel={};
+  dataLoaded = false;
   
-
-  constructor(private httpClient:HttpClient) { }
+  constructor(private personService:PersonService) { }
 
   ngOnInit(): void {
     this.getPersons();
   }
 
   getPersons(){
-    this.httpClient.post<PersonResponseModel>(this.apiUrl,this.body).subscribe((response) => {
+    this.personService.getPersons().subscribe(response => {
       this.persons = response.content
-    });
+      this.dataLoaded = true;
+    })
   }
 
 }
