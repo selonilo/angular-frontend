@@ -1,4 +1,15 @@
 <table class="table">
+    <thead>
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Cinsiyet</th>
+            <th>Yaş</th>
+            <th>Öğrenim Durumu</th>
+            <th>İl</th>
+            <th>İlçe</th>
+            <th>Askerlik Durumu</th>
+        </tr>
+    </thead>
     <tr *ngFor="let person of persons">
         <td>{{person.nameSurname}}</td>
         <td>{{person.gender}}</td>
