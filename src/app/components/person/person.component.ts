@@ -13,6 +13,7 @@ export class PersonComponent implements OnInit {
 
   persons:Person[]=[];
   dataLoaded = false;
+  filterText="";
   
   constructor(private personService:PersonService) { }
 

@@ -1,3 +1,10 @@
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Yaş giriniz</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Yaş giriniz">
+</div>
+<div *ngIf="filterText" class="alert alert-success">
+{{filterText}} aradınız.    
+</div>
 <div *ngIf="dataLoaded==false" class="spinner-border text-secondary" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
