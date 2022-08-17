@@ -11,6 +11,8 @@ export class PersonService {
   apiUrl = "http://localhost:8080/public/person?page=0&size=20"
 
   body:{} = {
+    age:"",
+    
     
   }
 
