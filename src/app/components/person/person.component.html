@@ -1,10 +1,11 @@
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Yaş giriniz</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Yaş giriniz">
+<div class="mb-3" style="display: flex; flex-direction:'row'    ">
+    <input type="text" [(ngModel)]="age"  class="form-control" id="age" placeholder="Yaş giriniz">
+    <input type="text" [(ngModel)]="gender"  class="form-control" id="gender" placeholder="Cinsiyet giriniz">
+    <input type="text" [(ngModel)]="educationStatus"  class="form-control" id="educationStatus" placeholder="Eğitim giriniz">
 </div>
 <button type="button" (click)="getPersons()" class="btn btn-warning">Ara</button>
-<div *ngIf="filterText" class="alert alert-success">
-{{filterText}} aradınız.    
+<div *ngIf="age" class="alert alert-success">
+{{age}} aradınız.    
 </div>
 <div *ngIf="dataLoaded==false" class="spinner-border text-secondary" role="status">
     <span class="visually-hidden">Loading...</span>
@@ -21,7 +22,7 @@
             <th>Askerlik Durumu</th>
         </tr>
     </thead>
-    <tr *ngFor="let person of persons | filterPipe:filterText">
+    <tr *ngFor="let person of persons">
         <td>{{person.nameSurname}}</td>
         <td>{{person.gender}}</td>
         <td>{{person.age}}</td>

@@ -8,15 +8,13 @@ import { AppComponent } from './app.component';
 import { PersonComponent } from './components/person/person.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
-import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
     CategoryComponent,
-    NaviComponent,
-    FilterPipePipe
+    NaviComponent
   ],
   imports: [
     BrowserModule,

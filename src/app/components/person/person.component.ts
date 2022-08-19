@@ -1,7 +1,7 @@
 import { PersonService } from './../../services/person.service';
 import { PersonResponseModel } from './../../models/personResponseModel';
 import { Person } from './../../models/person';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -9,23 +9,36 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './person.component.html',
   styleUrls: ['./person.component.css']
 })
-export class PersonComponent implements OnInit {
 
+export class PersonComponent implements OnInit {
+  
+  age:string="";
+  gender:string="";
+  educationStatus:string="";
   persons:Person[]=[];
   dataLoaded = false;
-  filterText="";
   
+
   constructor(private personService:PersonService) { }
 
   ngOnInit(): void {
+    
     this.getPersons();
   }
-
+   
+  
   getPersons(){
+    localStorage.setItem("age",this.age)
+    localStorage.setItem("gender",this.gender)
+    localStorage.setItem("educationStatus",this.educationStatus)
     this.personService.getPersons().subscribe(response => {
       this.persons = response.content
       this.dataLoaded = true;
     })
   }
 
+
+
 }
+
+
