@@ -15,6 +15,9 @@ export class PersonComponent implements OnInit {
   age:string="";
   gender:string="";
   educationStatus:string="";
+  city:string="";
+  district:string="";
+  militaryStatus:string="";
   persons:Person[]=[];
   dataLoaded = false;
   
@@ -31,6 +34,9 @@ export class PersonComponent implements OnInit {
     localStorage.setItem("age",this.age)
     localStorage.setItem("gender",this.gender)
     localStorage.setItem("educationStatus",this.educationStatus)
+    localStorage.setItem("city",this.city)
+    localStorage.setItem("district",this.district)
+    localStorage.setItem("militaryStatus",this.militaryStatus)
     this.personService.getPersons().subscribe(response => {
       this.persons = response.content
       this.dataLoaded = true;

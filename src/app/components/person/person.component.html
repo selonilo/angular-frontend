@@ -2,6 +2,9 @@
     <input type="text" [(ngModel)]="age"  class="form-control" id="age" placeholder="Yaş giriniz">
     <input type="text" [(ngModel)]="gender"  class="form-control" id="gender" placeholder="Cinsiyet giriniz">
     <input type="text" [(ngModel)]="educationStatus"  class="form-control" id="educationStatus" placeholder="Eğitim giriniz">
+    <input type="text" [(ngModel)]="city"  class="form-control" id="city" placeholder="Şehir giriniz">
+    <input type="text" [(ngModel)]="district"  class="form-control" id="district" placeholder="İlçe giriniz">
+    <input type="text" [(ngModel)]="militaryStatus"  class="form-control" id="militaryStatus" placeholder="Askerlik durumu giriniz">
 </div>
 <button type="button" (click)="getPersons()" class="btn btn-warning">Ara</button>
 <div *ngIf="age" class="alert alert-success">

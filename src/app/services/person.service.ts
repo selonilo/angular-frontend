@@ -17,7 +17,10 @@ export class PersonService {
     let body:{} = {
       age:localStorage.getItem("age"),
       gender:localStorage.getItem("gender"),
-      educationStatus:localStorage.getItem("educationStatus")
+      educationStatus:localStorage.getItem("educationStatus"),
+      city:localStorage.getItem("city"),
+      district:localStorage.getItem("district"),
+      militaryStatus:localStorage.getItem("militaryStatus")
     }
     return body;
   }
